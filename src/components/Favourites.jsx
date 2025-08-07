@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Row, Col, Container } from "react-bootstrap";
+import { removeFromFavouritesAction } from "../redux/actions";
 
 const Favourites = () => {
   const jobs = useSelector((state) => {
@@ -17,8 +18,8 @@ const Favourites = () => {
         <h1 className="fs-3 text-light">Pagina Preferiti</h1>
       </div>
       {/* aggiungo l'azienda che ho selezionate per inserirlo nella lista dei preferiti */}
-      <Container>
-        <Row>
+      <Container fluid>
+        <Row className="g-2">
           <Col xs="12">
             <ListGroup>
               {jobs.map((job, i) => {
@@ -36,11 +37,9 @@ const Favourites = () => {
                     </div>
                     <button
                       className="btn btn-danger"
+                      id="buttonRemove"
                       onClick={() => {
-                        dispatch({
-                          type: "REMOVE_JOB_FAVOURITE",
-                          payload: job._id,
-                        });
+                        dispatch(removeFromFavouritesAction(job._id));
                       }}
                     >
                       Remove
