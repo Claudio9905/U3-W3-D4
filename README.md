@@ -1,2 +1,2 @@
-# U3-W3-D4
-
+Conitnuazione dell'esercizio sulla pagina delle proposte di lavoro.
+Sempre uso di React + Bootstrap e React Redux, ma con l'ottimizzazione di varie funzionalità con l'uso dei Reducers multipli
